@@ -48,18 +48,38 @@ export const LOGIN = gql`
   }
   `;
 export const SAVE_BOOK = gql`
-  mutation savebook($newBook: newBook)
-  $email: String!, 
-  $password: String!
-  ) {
-    login(
-    email: $email, 
-    password: $password
-    ) {
-      token
-      user {
-        _id
-      }
+  mutation saveBook($newBook: newBook)
+  {
+    _id
+    email
+    username
+    savedBooks{
+    bookId
+    description
+    authors
+    image
+    link
+    title
+    }
+    }
+  }
+  `;
+export const DELETE_BOOK = gql`
+  mutation deleteBook($bookId: ID!)
+  {
+  deleteBook(bookId: $bookId) {
+    _id
+    email
+    username
+    savedBooks{
+    bookId
+    description
+    authors
+    image
+    link
+    title
+    }
+    }
     }
   }
   `;
