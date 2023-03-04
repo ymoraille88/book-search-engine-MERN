@@ -13,6 +13,7 @@ getSingleUser {
     image
     link
     title
+    }
 }
 
 }
